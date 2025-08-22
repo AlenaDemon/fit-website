@@ -1,0 +1,571 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+:root {
+    --baseShadel: #0f0f0f;
+    --blackShadel: #000000;
+    --blackShade2: #1c1c1c;
+    --whiteShade1: #ffffff;
+    --whiteShade2: #cccccc;
+    --accentShadel: #008080;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--baseShadel);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: var(--blackShade2);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 110px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    color: var(--whiteShade1);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accentShadel);
+    z-index: -1;
+    transition: left 0.3s ease;
+}
+
+.nav-links a:hover::before {
+   left: 0;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer; 
+}
+
+/* Hero*/
+.hero-section {
+    padding: 6em 6em 0 6em;
+    position: relative;
+}
+
+.hero-shape {
+    position: absolute;
+    height: 22vw; 
+    width: 22vw;  
+    min-height: 200px; 
+    min-width: 200px;  
+    background-color: var(--accentShadel);
+    z-index: -1;
+    transform: translateY(-50%);
+    top: 40%;
+    left: 15%; 
+    border-radius: 50%;
+}
+
+.hero-shape img {
+    position: relative;
+}
+
+.hero-image img {
+    position: relative;
+    transform: translateY(-100px);
+    width: 35vw;
+    top: 100px;
+}
+
+.hero-text {
+    width: 40vw;
+    position: absolute;
+    right: 0;
+    transform: translateY(50%);
+    bottom: 50%;
+}
+
+.star-rating {
+    margin-bottom: 2em;
+}
+
+.hero-rating img {
+    width: 51px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--baseShadel);
+    margin-left: -14px;
+}
+
+.hero-rating img:first-child {
+    margin-left: 0;
+}
+
+h1 {
+    font-size: 2.75em;
+    color: var(--whiteShade1);
+}
+
+h1 span {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px;
+    color: var(--whiteShade1);
+}
+
+.hero-subtext {
+    font-weight: 300;
+    font-size: 1.2em;
+    max-width: 500px;
+    color: var(--whiteShade2);
+}
+
+.hero-ctas a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin-top: 50px;
+    clip-path: polygon(
+        8% 0, 
+        92% 0, 
+        100% 20%, 
+        100% 80%, 
+        92% 100%, 
+        8% 100%, 
+        0 80%, 
+        0 20%
+    );
+}
+
+.cta-primary {
+    background-color: var(--accentShadel);
+    color: var(--whiteShade1);
+}
+
+.cta-secondary {
+    color: var(--accentShadel);
+    border: 2px solid var(--accentShadel);
+    background: transparent;
+}
+
+.cta-secondary:hover {
+    background-color: var(--accentShadel);
+    color: var(--whiteShade1);
+}
+
+.star-rating {
+    color: var(--accentShadel)
+}
+
+/* Marcquee section*/
+.marquee-section {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--accentShadel);
+    color: var(--baseShadel);
+    border-top: 2px solid var(--blackShadel);
+    border-bottom: 2px solid var(--blackShadel);
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 1em 0;
+    position: relative;
+}
+
+.marquee-section::before,
+.marquee-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-section::before {
+    left: 0;
+    background: linear-gradient(to right, var(--baseShadel), transparent);
+}
+
+.marquee-section::after {
+    right: 0;
+    background: linear-gradient(to left, var(--baseShadel), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  transition: transform 0.1s linear;
+}
+
+.marquee-content span {
+  margin-right: 4em;
+}
+
+
+.why-choose-us {
+    background-color: var(--blackShade2);
+    color: var(--whiteShade1);
+    padding: 6em;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.why-choose-us .subtitle {
+    font-size: 1.1em;
+    color: var(--accentShadel);
+    margin-bottom: 50px;
+    display: block;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+.feature {
+    background-color: var(--baseShadel);
+    padding: 1.8em;
+    border-radius: 0.93em;
+    transition: transform 0.3s ease;
+    clip-path: polygon(0 0, 83% 0, 100% 17%, 100% 100%, 0 100%);
+    cursor: pointer;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    color: var(--accentShadel);
+    font-size: 1.3em;
+}
+
+.feature p {
+    color: var(--whiteShade2);
+    font-size: 1em;
+}
+
+/* Services */
+
+.services {
+    text-align: center;
+    padding: 6em;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--whiteShade1);
+}
+
+p.intro {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
+    color: var(--accentShadel);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.services-card {
+    clip-path: polygon(0 0, 83% 0, 100% 17%, 100% 100%, 0 100%);
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0.6);
+    cursor: pointer;
+}
+
+.services-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+}
+
+.services-card:hover img {
+    transform: scale(1.05);
+}
+
+.hover-label {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: var(--accentShadel);
+    color: var(--blackShade2);
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 15px 0;
+    transition: bottom 0.3s ease;
+}
+
+.services-card:hover .hover-label {
+    bottom: 0;
+}
+
+.pricing {
+    background-color: var(--blackShade2);
+    padding: 6em;
+    text-align: center;
+    color: var(--whiteShade1);
+}
+
+.pricing h2 {
+    font-size: 2.5em;
+    margin-top: 10px;
+}
+
+.pricing.subtitle {
+    font-size: 1.1em;
+    color: var(--accentShadel);
+    margin-bottom: 50px;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6em;
+    gap: 30px;
+}
+
+.pricing-card {
+    width: 300px;
+    background: var(--baseShadel);
+    padding: 40px 20px;
+    border-radius: 20px;
+    clip-path: polygon(0 0, 83% 0, 100% 17%, 100% 100%, 0 100%);
+    color: var(--whiteShade1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.pricing-card:hover {
+    background-color: var(--accentShadel);
+    border-top: 2px solid var(--accentShadel);
+}
+
+.pricing-card:hover h3,
+.pricing-card:hover li {
+    color: var(--baseShadel)
+}
+
+.pricing-card:hover .cta-primary {
+    background-color: var(--whiteShade1);
+    color: var(--blackShadel);
+}
+
+.pricing-card h3 {
+    font-size: 1.5em;
+    color: var(--accentShadel);
+    margin-bottom: 20px;
+}
+
+.pricing-card .price {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.pricing-card .price span {
+    font-size: 1em;
+    color: var(--whiteShade2);
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+    margin: 10px 0;
+    color: var(--whiteShade2);
+}
+
+.pricing-card .cta-primary {
+    background-color: var(--accentShadel);
+    color: var(--blackShadel);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.featured {
+    transform: scale(1.2);
+}
+
+.site-footer {
+    background-color: var(--blackShade1);
+    color: var(--whiteShade1);
+    padding: 50px 20px 20px;
+    font-family: "Oswald", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    min-width: 250px;
+}
+
+.footer-section h4 {
+    color: var(--accentShadel);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.footer-section.about img {
+    width: 110px;
+    margin-bottom: 15px;
+}
+
+.footer-section.about p {
+    color: var(--whiteShade2);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-section.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: var(--whiteShade1);
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    color: var(--accentShadel)
+}
+
+.footer-section.contact p {
+    color: var(--whiteShade2);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1.87em;
+    font-size: 0.9em;
+    color: var(--accentShadel); 
+    padding-top: 20px;
+    border-top: 1px solid var(--baseShadel);
+}
+
+.hero-image img {
+    opacity: 0;
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-top {
+    animation: slideInTop 1s forwards;
+}
+
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.zoomed-in {
+    animation: zoomIn 1s forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+

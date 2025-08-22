@@ -1,0 +1,21 @@
+{
+  "name": "fit-website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AlenaDemon/fit-website#readme",
+  "bugs": {
+    "url": "https://github.com/AlenaDemon/fit-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlenaDemon/fit-website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
