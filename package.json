@@ -15,11 +15,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build",
-    "start": "cd frontend && npm run preview -- --port $PORT",
-    "install:all": "npm install && cd frontend && npm install",
-    "render-build": "npm run install:all && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
   }
 }
