@@ -15,10 +15,11 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev --prefix frontend",
-    "build": "npm run build --prefix frontend",
-    "start": "npm run preview --prefix frontend -- --port $PORT",
-    "render-build": "npm install && npm run build",
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run preview -- --port $PORT",
+    "install:all": "npm install && cd frontend && npm install",
+    "render-build": "npm run install:all && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
