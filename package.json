@@ -12,15 +12,18 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite preview --port 10000 --host 0.0.0.0"
+    "start": "npx live-server dist --port=10000 --host=0.0.0.0"
   },
   "devDependencies": {
     "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
